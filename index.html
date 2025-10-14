@@ -48,7 +48,7 @@ This single-file project includes inline CSS and JavaScript to keep it easy to e
     .container{max-width:var(--max-width);margin:0 auto;padding:24px;background:rgba(255,255,255,0.85);border-radius:12px;backdrop-filter:blur(8px)}
 
     /* Header / Hero */
-    header.hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:30px 0;background:linear-gradient(135deg,rgba(229,75,75,0.85),rgba(255,138,101,0.85));color:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+    header.hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:30px 0;background:linear-gradient(135deg,rgba(229,75,75,0.85),rgba(107, 169, 216, 0.63);color:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.1)}
     .brand{display:flex;align-items:center;gap:16px}
     .logo{width:68px;height:68px;border-radius:12px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
     h1{font-size:28px;margin:0;color:#fff}
@@ -137,12 +137,15 @@ This single-file project includes inline CSS and JavaScript to keep it easy to e
       <!-- PHOTO SLIDER -->
       <div>
         <h2>Members & Moments</h2>
-        <!-- Slider: replace the placeholder images in the images/ folder with your real photos. Filenames used below: slider1.jpg, slider2.jpg, slider3.jpg -->
+        <!-- Slider: replace the placeholder images in the images/ folder with your real photos. Filenames used below: slider1.jpg, slider2.jpg, slider3.jpg sloder4.jpg, slider5.jpg, slider6.jpg-->
         <div class="slider" id="slider" aria-roledescription="carousel">
           <div class="slides" id="slides">
             <div class="slide"><img src="images/slider1.jpg" alt="Trip Up Cumilla member photo 1 (replace with real)" /></div>
             <div class="slide"><img src="images/slider2.jpg" alt="Trip Up Cumilla member photo 2 (replace with real)" /></div>
             <div class="slide"><img src="images/slider3.jpg" alt="Trip Up Cumilla member photo 3 (replace with real)" /></div>
+             <div class="slide"><img src="images/slider4.jpg" alt="Trip Up Cumilla member photo 4 (replace with real)" /></div>
+            <div class="slide"><img src="images/slider5.jpg" alt="Trip Up Cumilla member photo 5 (replace with real)" /></div>
+            <div class="slide"><img src="images/slider6.jpg" alt="Trip Up Cumilla member photo 6 (replace with real)" /></div>
           </div>
 
           <div class="slider-controls">
@@ -201,6 +204,15 @@ This single-file project includes inline CSS and JavaScript to keep it easy to e
           </div>
         </article>
 
+        <article class="card" role="listitem" aria-labelledby="m5-name">
+          <div class="avatar"><img src="images/avatar5.jpg" alt="TAMANNA AKTER" /></div>
+          <div>
+            <h3 id="m4-name">Tamanna Akter</h3>
+            <div class="muted">Senior Host</div>
+            <div style="margin-top:6px">📞 <a href="tel:+8801627681633">01627681633</a></div>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -213,22 +225,14 @@ This single-file project includes inline CSS and JavaScript to keep it easy to e
         <!-- Example package card. Duplicate for all destinations below. Use mailto with subject/body. -->
         <!-- Destination list to include: Cox's Bazar, Bandarban, Rangamati, Sajek, Shitakundu, Sundarban, Sylhet, Jaflong, Sreemangal -->
 
-        <div class="pkg">
-          <div class="title">Cox's Bazar</div>
-          <div class="desc muted">Relax on the longest unbroken sandy beach in the world — family-friendly stay and seaside activities.</div>
-          <div style="margin-top:12px">Duration: 3 days / 2 nights</div>
-          <div class="meta">
-            <div class="price">৳6,500</div>
-            <div><a class="buy" href="mailto:tripupcumilla@gmail.com?subject=Booking%20-%20Cox's%20Bazar&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Cox's%20Bazar%20package%20(৳6,500).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
-          </div>
-        </div>
+       
 
         <div class="pkg">
           <div class="title">Bandarban</div>
           <div class="desc muted">Hills, waterfalls and tribal culture — ideal for adventurous groups.</div>
-          <div style="margin-top:12px">Duration: 2 days / 1 night</div>
+          <div style="margin-top:12px">Duration: 17 oct Day-Night trip</div>
           <div class="meta">
-            <div class="price">৳5,000</div>
+            <div class="price">৳2,500</div>
             <div><a class="buy" href="mailto:tripupcumilla@gmail.com?subject=Booking%20-%20Bandarban&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Bandarban%20package%20(৳5,000).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
           </div>
         </div>
@@ -236,9 +240,9 @@ This single-file project includes inline CSS and JavaScript to keep it easy to e
         <div class="pkg">
           <div class="title">Rangamati</div>
           <div class="desc muted">Lake views and boat trips to tribal islands — peaceful retreats.</div>
-          <div style="margin-top:12px">Duration: 2 days / 1 night</div>
+          <div style="margin-top:12px">Duration: 31 oct Day-Night trip</div>
           <div class="meta">
-            <div class="price">৳4,800</div>
+            <div class="price">৳1,750</div>
             <div><a class="buy" href="mailto:tripupcumilla@gmail.com?subject=Booking%20-%20Rangamati&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Rangamati%20package%20(৳4,800).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
           </div>
         </div>
@@ -246,63 +250,34 @@ This single-file project includes inline CSS and JavaScript to keep it easy to e
         <div class="pkg">
           <div class="title">Sajek</div>
           <div class="desc muted">Scenic hilltop sunrise views and cool mountain air.</div>
-          <div style="margin-top:12px">Duration: 2 days / 1 night</div>
+          <div style="margin-top:12px">Duration: 2 days / 3 night</div>
           <div class="meta">
-            <div class="price">৳5,500</div>
+            <div class="price">৳4,500</div>
             <div><a class="buy" href="mailto:tripupcumilla@gmail.com?subject=Booking%20-%20Sajek&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Sajek%20package%20(৳5,500).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
           </div>
         </div>
 
         <div class="pkg">
-          <div class="title">Shitakundu</div>
-          <div class="desc muted">Coastal boat trips, seafood and natural beaches.</div>
-          <div style="margin-top:12px">Duration: 1 day trip</div>
+          <div class="title">Sajek</div>
+          <div class="desc muted">Scenic hilltop sunrise views and cool mountain air.</div>
+          <div style="margin-top:12px">Duration: 31 Oct 3 days / 4 night</div>
           <div class="meta">
-            <div class="price">৳2,200</div>
-            <div><a class="buy" href="mailto:tripupcumilla@gmail.com?subject=Booking%20-%20Shitakundu&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Shitakundu%20package%20(৳2,200).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
+            <div class="price">৳5,999</div>
+            <div><a class="buy" href="mailto:tripupcumilla@gmail.com?subject=Booking%20-%20Sajek&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Sajek%20package%20(৳5,500).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
           </div>
         </div>
 
         <div class="pkg">
           <div class="title">Sundarban</div>
-          <div class="desc muted">Mangrove safari and wildlife watching (permit required).</div>
-          <div style="margin-top:12px">Duration: 2 days / 1 night</div>
+          <div class="desc muted"> Mangrove forest and Animals with Unforgeable Memories.</div>
+          <div style="margin-top:12px">Duration: 2 days / 3 night</div>
           <div class="meta">
-            <div class="price">৳7,500</div>
-            <div><a class="buy" href="mailto:tripupcumilla@gmail.com?subject=Booking%20-%20Sundarban&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Sundarban%20package%20(৳7,500).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
+            <div class="price">৳1,950</div>
+            <div><a class="buy" href="mailto:tripupcumilla@gmail.com?subject=Booking%20-%20Sajek&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Sajek%20package%20(৳5,500).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
           </div>
         </div>
 
-        <div class="pkg">
-          <div class="title">Sylhet</div>
-          <div class="desc muted">Tea gardens and serene landscapes — a nature lover's delight.</div>
-          <div style="margin-top:12px">Duration: 2 days / 1 night</div>
-          <div class="meta">
-            <div class="price">৳6,200</div>
-            <div><a class="buy" href="mailto:tripupcumilla@gmail.com?subject=Booking%20-%20Sylhet&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Sylhet%20package%20(৳6,200).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
-          </div>
-        </div>
-
-        <div class="pkg">
-          <div class="title">Jaflong</div>
-          <div class="desc muted">Riverside boulder fields, tea gardens and scenic photo stops.</div>
-          <div style="margin-top:12px">Duration: 1 day trip</div>
-          <div class="meta">
-            <div class="price">৳2,800</div>
-            <div><a class="buy" href="mailto:tripupcumilla@gmail.com?subject=Booking%20-%20Jaflong&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Jaflong%20package%20(৳2,800).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
-          </div>
-        </div>
-
-        <div class="pkg">
-          <div class="title">Sreemangal</div>
-          <div class="desc muted">Tea trails, rainforest and local cultural experiences.</div>
-          <div style="margin-top:12px">Duration: 1 day / 1 night</div>
-          <div class="meta">
-            <div class="price">৳3,400</div>
-            <div><a class="buy" href="mailto:tripupcumilla@gmail.com?subject=Booking%20-%20Sreemangal&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Sreemangal%20package%20(৳3,400).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
-          </div>
-        </div>
-
+        
       </div>
     </section>
 
@@ -317,6 +292,12 @@ This single-file project includes inline CSS and JavaScript to keep it easy to e
         <img src="images/gallery4.jpg" alt="Gallery image 4 (replace)" />
         <img src="images/gallery5.jpg" alt="Gallery image 5 (replace)" />
         <img src="images/gallery6.jpg" alt="Gallery image 6 (replace)" />
+        <img src="images/gallery7.jpg" alt="Gallery image 7 (replace)" />
+        <img src="images/gallery8.jpg" alt="Gallery image 8 (replace)" />
+        <img src="images/gallery9.jpg" alt="Gallery image 9 (replace)" />
+        <img src="images/gallery10.jpg" alt="Gallery image 10 (replace)" />
+        <img src="images/gallery11.jpg" alt="Gallery image 11 (replace)" />
+        <img src="images/gallery12.jpg" alt="Gallery image 12 (replace)" />
       </div>
     </section>
 
@@ -342,6 +323,9 @@ This single-file project includes inline CSS and JavaScript to keep it easy to e
 
             <label for="email">Email</label>
             <input id="email" name="email" type="email" required />
+
+            <label for="Destination">Destination</label>
+            <input id="destination" name="destination" type="destination" required />
 
             <label for="message">Message</label>
             <textarea id="message" name="message" required></textarea>
