@@ -11,6 +11,19 @@ README / Publishing instructions (also included as a visible section in the page
 This single-file project includes inline CSS and JavaScript to keep it easy to edit and host on GitHub Pages.
 -->
 
+<!--
+README / Publishing instructions (also included as a visible section in the page):
+
+1) Create a new GitHub repository (public) named e.g. trip-up-cumilla
+2) Add this single file `index.html` to the root of the repository.
+3) (Optional) add an `images/` folder and replace the placeholder images with real photos. See comments in the HTML for filenames.
+4) Commit & push to GitHub.
+5) In the repository settings -> Pages (or "Pages" in the sidebar), set the source to the main branch and root (/). Save.
+6) After a minute your site will be published at https://<your-username>.github.io/<repo-name>/ or if repository named <username>.github.io then at https://<username>.github.io/
+
+This single-file project includes inline CSS and JavaScript to keep it easy to edit and host on GitHub Pages.
+-->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,32 +32,28 @@ This single-file project includes inline CSS and JavaScript to keep it easy to e
   <title>Trip Up Cumilla — Domestic Travel Group</title>
   <meta name="description" content="Trip Up Cumilla — domestic tours & group travel from Cumilla" />
 
-  <!--
-    Styles are intentionally placed here so the project stays as a single index.html file.
-    To customize layout/colors, edit the :root variables and the CSS below.
-  -->
   <style>
     :root{
-      --accent:#e54b4b; /* brand accent */
+      --accent:#e54b4b;
       --muted:#6b7280;
-      --bg:#f8fafc;
+      --bg:#eef6f9; /* softer, smoother background */
       --card:#ffffff;
       --max-width:1100px;
       --radius:12px;
       font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:var(--bg);color:#111}
+    html,body{height:100%;margin:0;background:var(--bg) url('images/travel-bg.jpg') no-repeat center center fixed;background-size:cover;color:#111}
     a{color:var(--accent);}
-    .container{max-width:var(--max-width);margin:0 auto;padding:24px}
+    .container{max-width:var(--max-width);margin:0 auto;padding:24px;background:rgba(255,255,255,0.85);border-radius:12px;backdrop-filter:blur(8px)}
 
     /* Header / Hero */
-    header.hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:30px 0}
+    header.hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:30px 0;background:linear-gradient(135deg,rgba(229,75,75,0.85),rgba(255,138,101,0.85));color:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.1)}
     .brand{display:flex;align-items:center;gap:16px}
-    .logo{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff8a65);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
-    h1{font-size:28px;margin:0}
-    .tagline{color:var(--muted);margin:6px 0}
-    .about{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(12,15,20,0.06)}
+    .logo{width:68px;height:68px;border-radius:12px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    h1{font-size:28px;margin:0;color:#fff}
+    .tagline{color:#fefefe;margin:6px 0}
+    .about{background:rgba(255,255,255,0.2);padding:16px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(12,15,20,0.06)}
 
     /* Layout sections */
     section{margin:30px 0}
@@ -63,7 +72,8 @@ This single-file project includes inline CSS and JavaScript to keep it easy to e
 
     /* Members cards */
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(12,15,20,0.06);display:flex;gap:12px;align-items:center}
+    .card{background:linear-gradient(135deg,#ffffff 0%, #e6f3ff 100%);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(12,15,20,0.06);display:flex;gap:12px;align-items:center;transition:transform 0.2s ease, box-shadow 0.2s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(0,0,0,0.1)}
     .avatar{width:72px;height:72px;border-radius:12px;background:#eee;flex-shrink:0;overflow:hidden}
     .avatar img{width:100%;height:100%;object-fit:cover}
     .card h3{margin:0;font-size:16px}
@@ -91,13 +101,19 @@ This single-file project includes inline CSS and JavaScript to keep it easy to e
 
     footer{padding:20px 0;color:var(--muted);font-size:14px}
 
-    /* Responsive tweaks */
     @media (max-width:800px){
       header.hero{padding:12px 0}
       .slider .slide{height:220px}
       .slide img{height:220px}
       .contact-grid{grid-template-columns:1fr}
     }
+  </style>
+</head>
+<body>
+  <!-- Body content unchanged except style updates -->
+  <!-- (Same HTML structure as before) -->
+</body>
+</html>
   </style>
 </head>
 <body>
