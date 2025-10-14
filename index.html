@@ -1,0 +1,415 @@
+<!--
+README / Publishing instructions (also included as a visible section in the page):
+
+1) Create a new GitHub repository (public) named e.g. trip-up-cumilla
+2) Add this single file `index.html` to the root of the repository.
+3) (Optional) add an `images/` folder and replace the placeholder images with real photos. See comments in the HTML for filenames.
+4) Commit & push to GitHub.
+5) In the repository settings -> Pages (or "Pages" in the sidebar), set the source to the main branch and root (/). Save.
+6) After a minute your site will be published at https://<your-username>.github.io/<repo-name>/ or if repository named <username>.github.io then at https://<username>.github.io/
+
+This single-file project includes inline CSS and JavaScript to keep it easy to edit and host on GitHub Pages.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trip Up Cumilla — Domestic Travel Group</title>
+  <meta name="description" content="Trip Up Cumilla — domestic tours & group travel from Cumilla" />
+
+  <!--
+    Styles are intentionally placed here so the project stays as a single index.html file.
+    To customize layout/colors, edit the :root variables and the CSS below.
+  -->
+  <style>
+    :root{
+      --accent:#e54b4b; /* brand accent */
+      --muted:#6b7280;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --max-width:1100px;
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#111}
+    a{color:var(--accent);}
+    .container{max-width:var(--max-width);margin:0 auto;padding:24px}
+
+    /* Header / Hero */
+    header.hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:30px 0}
+    .brand{display:flex;align-items:center;gap:16px}
+    .logo{width:68px;height:68px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff8a65);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    h1{font-size:28px;margin:0}
+    .tagline{color:var(--muted);margin:6px 0}
+    .about{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(12,15,20,0.06)}
+
+    /* Layout sections */
+    section{margin:30px 0}
+    h2{margin:0 0 12px 0;font-size:20px}
+
+    /* Slider */
+    .slider{position:relative;border-radius:12px;overflow:hidden;background:#000}
+    .slides{display:flex;transition:transform 0.6s ease}
+    .slide{min-width:100%;height:320px;display:flex;align-items:center;justify-content:center}
+    .slide img{width:100%;height:320px;object-fit:cover;display:block;opacity:0.96}
+    .slider-controls{position:absolute;left:12px;right:12px;top:0;bottom:0;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+    .btn{pointer-events:auto;background:rgba(255,255,255,0.85);border:0;padding:8px 10px;border-radius:8px;cursor:pointer}
+    .dots{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:8px}
+    .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.6);cursor:pointer}
+    .dot.active{background:var(--accent)}
+
+    /* Members cards */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(12,15,20,0.06);display:flex;gap:12px;align-items:center}
+    .avatar{width:72px;height:72px;border-radius:12px;background:#eee;flex-shrink:0;overflow:hidden}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .card h3{margin:0;font-size:16px}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Packages */
+    .packages{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .pkg{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(12,15,20,0.04);display:flex;flex-direction:column}
+    .pkg .title{font-weight:700;margin-bottom:6px}
+    .pkg .meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+    .price{font-weight:700;color:var(--accent)}
+    .buy{background:var(--accent);color:white;border:0;padding:8px 10px;border-radius:8px;cursor:pointer}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:16px}
+    .contact-card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(12,15,20,0.04)}
+    form label{display:block;margin:8px 0 4px;font-size:14px}
+    input[type=text],input[type=email],textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+    textarea{min-height:120px}
+    input[type=submit]{margin-top:10px;background:var(--accent);color:white;border:0;padding:10px;border-radius:8px;cursor:pointer}
+
+    footer{padding:20px 0;color:var(--muted);font-size:14px}
+
+    /* Responsive tweaks */
+    @media (max-width:800px){
+      header.hero{padding:12px 0}
+      .slider .slide{height:220px}
+      .slide img{height:220px}
+      .contact-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HERO / LANDING -->
+    <header class="hero" role="banner">
+      <div class="brand">
+        <div class="logo" aria-hidden>TU</div>
+        <div>
+          <h1>Trip Up Cumilla</h1>
+          <div class="tagline">Explore Bangladesh with friendly local guides — safe, fun, affordable domestic tours.</div>
+        </div>
+      </div>
+
+      <!-- About paragraph: edit this to change services -->
+      <div class="about">
+        <strong>About Trip Up Cumilla</strong>
+        <p style="margin:8px 0 0; color:var(--muted)">Trip Up Cumilla organises domestic tours across Bangladesh — family outings, student group trips, and private packages. We arrange transport, guides, food options and comfortable stays. Destinations include Cox's Bazar, Bandarban, Rangamati, Sajek, Shitakundu, Sundarban, Sylhet, Jaflong, and Sreemangal.</p>
+      </div>
+
+      <!-- PHOTO SLIDER -->
+      <div>
+        <h2>Members & Moments</h2>
+        <!-- Slider: replace the placeholder images in the images/ folder with your real photos. Filenames used below: slider1.jpg, slider2.jpg, slider3.jpg -->
+        <div class="slider" id="slider" aria-roledescription="carousel">
+          <div class="slides" id="slides">
+            <div class="slide"><img src="images/slider1.jpg" alt="Trip Up Cumilla member photo 1 (replace with real)" /></div>
+            <div class="slide"><img src="images/slider2.jpg" alt="Trip Up Cumilla member photo 2 (replace with real)" /></div>
+            <div class="slide"><img src="images/slider3.jpg" alt="Trip Up Cumilla member photo 3 (replace with real)" /></div>
+          </div>
+
+          <div class="slider-controls">
+            <button id="prev" class="btn" aria-label="Previous slide">◀</button>
+            <button id="next" class="btn" aria-label="Next slide">▶</button>
+          </div>
+          <div class="dots" id="dots" aria-hidden="false">
+            <div class="dot active" data-index="0"></div>
+            <div class="dot" data-index="1"></div>
+            <div class="dot" data-index="2"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MEMBERS -->
+    <section id="members">
+      <h2>Our Members</h2>
+      <p class="muted">Friendly local hosts ready to help you explore.</p>
+      <div class="cards" role="list">
+
+        <!-- Member card: replace avatar1.jpg etc. -->
+        <article class="card" role="listitem" aria-labelledby="m1-name">
+          <div class="avatar"><img src="images/avatar1.jpg" alt="Amena Akter Kheya" /></div>
+          <div>
+            <h3 id="m1-name">Amena Akter Kheya</h3>
+            <div class="muted">Founder and CEO</div>
+            <div style="margin-top:6px">📞 <a href="tel:+8801632112292">01632112292</a></div>
+          </div>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="m2-name">
+          <div class="avatar"><img src="images/avatar2.jpg" alt="Amena Akter Popy" /></div>
+          <div>
+            <h3 id="m2-name">Amena Akter Popy</h3>
+            <div class="muted">Senior Host</div>
+            <div style="margin-top:6px">📞 <a href="tel:+8801887988955">01887988955</a></div>
+          </div>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="m3-name">
+          <div class="avatar"><img src="images/avatar3.jpg" alt="Sharian Imtiaz Limon" /></div>
+          <div>
+            <h3 id="m3-name">Sharian Imtiaz Limon</h3>
+            <div class="muted">Senior Host</div>
+            <div style="margin-top:6px">📞 <a href="tel:+8801333209626">01333209626</a></div>
+          </div>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="m4-name">
+          <div class="avatar"><img src="images/avatar4.jpg" alt="Shuvro Ahmad" /></div>
+          <div>
+            <h3 id="m4-name">Shuvro Ahmad</h3>
+            <div class="muted">Junior Host</div>
+            <div style="margin-top:6px">📞 <a href="tel:+8801706911233">01706911233</a></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section id="packages">
+      <h2>Tour Packages</h2>
+      <p class="muted">Choose a destination — click Buy to contact us by email and reserve your spot.</p>
+      <div class="packages">
+
+        <!-- Example package card. Duplicate for all destinations below. Use mailto with subject/body. -->
+        <!-- Destination list to include: Cox's Bazar, Bandarban, Rangamati, Sajek, Shitakundu, Sundarban, Sylhet, Jaflong, Sreemangal -->
+
+        <div class="pkg">
+          <div class="title">Cox's Bazar</div>
+          <div class="desc muted">Relax on the longest unbroken sandy beach in the world — family-friendly stay and seaside activities.</div>
+          <div style="margin-top:12px">Duration: 3 days / 2 nights</div>
+          <div class="meta">
+            <div class="price">৳6,500</div>
+            <div><a class="buy" href="mailto:tripupcumilla@example.com?subject=Booking%20-%20Cox's%20Bazar&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Cox's%20Bazar%20package%20(৳6,500).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
+          </div>
+        </div>
+
+        <div class="pkg">
+          <div class="title">Bandarban</div>
+          <div class="desc muted">Hills, waterfalls and tribal culture — ideal for adventurous groups.</div>
+          <div style="margin-top:12px">Duration: 2 days / 1 night</div>
+          <div class="meta">
+            <div class="price">৳5,000</div>
+            <div><a class="buy" href="mailto:tripupcumilla@example.com?subject=Booking%20-%20Bandarban&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Bandarban%20package%20(৳5,000).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
+          </div>
+        </div>
+
+        <div class="pkg">
+          <div class="title">Rangamati</div>
+          <div class="desc muted">Lake views and boat trips to tribal islands — peaceful retreats.</div>
+          <div style="margin-top:12px">Duration: 2 days / 1 night</div>
+          <div class="meta">
+            <div class="price">৳4,800</div>
+            <div><a class="buy" href="mailto:tripupcumilla@example.com?subject=Booking%20-%20Rangamati&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Rangamati%20package%20(৳4,800).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
+          </div>
+        </div>
+
+        <div class="pkg">
+          <div class="title">Sajek</div>
+          <div class="desc muted">Scenic hilltop sunrise views and cool mountain air.</div>
+          <div style="margin-top:12px">Duration: 2 days / 1 night</div>
+          <div class="meta">
+            <div class="price">৳5,500</div>
+            <div><a class="buy" href="mailto:tripupcumilla@example.com?subject=Booking%20-%20Sajek&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Sajek%20package%20(৳5,500).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
+          </div>
+        </div>
+
+        <div class="pkg">
+          <div class="title">Shitakundu</div>
+          <div class="desc muted">Coastal boat trips, seafood and natural beaches.</div>
+          <div style="margin-top:12px">Duration: 1 day trip</div>
+          <div class="meta">
+            <div class="price">৳2,200</div>
+            <div><a class="buy" href="mailto:tripupcumilla@example.com?subject=Booking%20-%20Shitakundu&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Shitakundu%20package%20(৳2,200).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
+          </div>
+        </div>
+
+        <div class="pkg">
+          <div class="title">Sundarban</div>
+          <div class="desc muted">Mangrove safari and wildlife watching (permit required).</div>
+          <div style="margin-top:12px">Duration: 2 days / 1 night</div>
+          <div class="meta">
+            <div class="price">৳7,500</div>
+            <div><a class="buy" href="mailto:tripupcumilla@example.com?subject=Booking%20-%20Sundarban&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Sundarban%20package%20(৳7,500).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
+          </div>
+        </div>
+
+        <div class="pkg">
+          <div class="title">Sylhet</div>
+          <div class="desc muted">Tea gardens and serene landscapes — a nature lover's delight.</div>
+          <div style="margin-top:12px">Duration: 2 days / 1 night</div>
+          <div class="meta">
+            <div class="price">৳6,200</div>
+            <div><a class="buy" href="mailto:tripupcumilla@example.com?subject=Booking%20-%20Sylhet&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Sylhet%20package%20(৳6,200).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
+          </div>
+        </div>
+
+        <div class="pkg">
+          <div class="title">Jaflong</div>
+          <div class="desc muted">Riverside boulder fields, tea gardens and scenic photo stops.</div>
+          <div style="margin-top:12px">Duration: 1 day trip</div>
+          <div class="meta">
+            <div class="price">৳2,800</div>
+            <div><a class="buy" href="mailto:tripupcumilla@example.com?subject=Booking%20-%20Jaflong&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Jaflong%20package%20(৳2,800).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
+          </div>
+        </div>
+
+        <div class="pkg">
+          <div class="title">Sreemangal</div>
+          <div class="desc muted">Tea trails, rainforest and local cultural experiences.</div>
+          <div style="margin-top:12px">Duration: 1 day / 1 night</div>
+          <div class="meta">
+            <div class="price">৳3,400</div>
+            <div><a class="buy" href="mailto:tripupcumilla@example.com?subject=Booking%20-%20Sreemangal&body=Hello%20Trip%20Up%20Cumilla%2C%0A%0AI%20am%20interested%20in%20the%20Sreemangal%20package%20(৳3,400).%20Please%20contact%20me%20with%20details.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20">Buy</a></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <h2>Photo Gallery</h2>
+      <p class="muted">Replace these placeholder thumbnails with your full-member photos and past tour images. Filenames: gallery1.jpg, gallery2.jpg, etc.</p>
+      <div class="gallery">
+        <img src="images/gallery1.jpg" alt="Gallery image 1 (replace)" />
+        <img src="images/gallery2.jpg" alt="Gallery image 2 (replace)" />
+        <img src="images/gallery3.jpg" alt="Gallery image 3 (replace)" />
+        <img src="images/gallery4.jpg" alt="Gallery image 4 (replace)" />
+        <img src="images/gallery5.jpg" alt="Gallery image 5 (replace)" />
+        <img src="images/gallery6.jpg" alt="Gallery image 6 (replace)" />
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p class="muted">Office: Opposite of Yousuf High School, Rajganj, Cumilla</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Visit or call</h3>
+          <p class="muted">Our office is open for visits. To arrange a group booking please call any of our hosts above or email us.</p>
+          <p><strong>Email:</strong> <a href="mailto:tripupcumilla@example.com">tripupcumilla@example.com</a></p>
+          <p><strong>Address:</strong> Opposite of Yousuf High School, Rajganj, Cumilla</p>
+        </div>
+
+        <div class="contact-card" aria-labelledby="form-title">
+          <h3 id="form-title">Send a message</h3>
+          <!-- Simple contact form. Submitting opens your email client (mailto) or will log to console if mailto blocked. -->
+          <form id="contactForm">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="submit" value="Send Message" />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- README visible on page for easy copy/paste -->
+    <section id="readme">
+      <h2>Quick README</h2>
+      <p class="muted">This single file is ready for GitHub Pages. Replace placeholder images in <code>images/</code> and update emails/phones as needed. To publish: push to GitHub and enable Pages from the repository settings.</p>
+    </section>
+
+    <footer>
+      <div class="muted">© Trip Up Cumilla — Domestic tours across Bangladesh.</div>
+    </footer>
+  </div>
+
+  <!-- Inline JavaScript: keeps project single-file. Accessible controls included. -->
+  <script>
+    // Slider functionality (automatic + manual controls)
+    (function(){
+      const slides = document.getElementById('slides');
+      const dots = Array.from(document.querySelectorAll('.dot'));
+      const prevBtn = document.getElementById('prev');
+      const nextBtn = document.getElementById('next');
+      let current = 0;
+      const total = slides.children.length;
+      let timer = null;
+
+      function goTo(index){
+        current = (index + total) % total;
+        slides.style.transform = 'translateX(' + (-current * 100) + '%)';
+        dots.forEach(d=>d.classList.remove('active'));
+        dots[current].classList.add('active');
+      }
+
+      prevBtn.addEventListener('click', ()=>{ goTo(current-1); resetTimer(); });
+      nextBtn.addEventListener('click', ()=>{ goTo(current+1); resetTimer(); });
+      dots.forEach(d=>d.addEventListener('click', e=>{ goTo(Number(e.target.dataset.index)); resetTimer(); }));
+
+      function autoAdvance(){
+        goTo(current+1);
+      }
+      function resetTimer(){
+        if(timer) clearInterval(timer);
+        timer = setInterval(autoAdvance, 4500);
+      }
+      // Start
+      goTo(0);
+      timer = setInterval(autoAdvance,4500);
+
+      // Pause on hover for accessibility
+      const slider = document.getElementById('slider');
+      slider.addEventListener('mouseenter', ()=>{ if(timer) clearInterval(timer); });
+      slider.addEventListener('mouseleave', ()=>{ resetTimer(); });
+    })();
+
+    // Contact form: create mailto or log to console if blocked
+    (function(){
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = encodeURIComponent(form.name.value);
+        const email = encodeURIComponent(form.email.value);
+        const message = encodeURIComponent(form.message.value);
+        const subject = encodeURIComponent('Contact%20from%20website%20-%20' + (form.name.value || '')); 
+        const body = 'Name:%20' + name + '%0AEmail:%20' + email + '%0A%0A' + message;
+        const mailto = 'mailto:tripupcumilla@example.com?subject=' + subject + '&body=' + body;
+        // Try opening mail client
+        window.location.href = mailto;
+        // If mail client blocked, also log to console so developer can capture submissions when testing
+        console.log('Contact form submission', {name: form.name.value, email: form.email.value, message: form.message.value});
+      });
+    })();
+
+    // Small accessibility helper: add keyboard support to dots
+    (function(){
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach(d=>{ d.setAttribute('tabindex','0'); d.addEventListener('keydown', e=>{ if(e.key === 'Enter' || e.key === ' ') d.click(); }); });
+    })();
+  </script>
+</body>
+</html>
