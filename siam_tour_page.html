@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Group - Explore the World</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #0088cc, #00c6ff);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      width: 90%;
+      margin: 30px auto;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .product-details {
+      padding: 15px;
+    }
+    .product-details h2 {
+      font-size: 1.2rem;
+      margin: 0 0 10px;
+    }
+    .product-details p {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    .price {
+      font-weight: bold;
+      color: #0088cc;
+    }
+    .buy-btn {
+      background: #00c6ff;
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+    }
+    .buy-btn:hover {
+      background: #0088cc;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      margin-top: 30px;
+    }
+    .payment-methods img {
+      width: 50px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SIAM TRAVEL GROUP</h1>
+    <p>Explore Beautiful Destinations with Us</p>
+  </header>
+
+  <div class="container">
+    <h2>Our Tour Packages</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://source.unsplash.com/400x300/?beach" alt="Cox's Bazar" />
+        <div class="product-details">
+          <h2>Cox’s Bazar Tour</h2>
+          <p>3 Days & 2 Nights package including hotel, food, and guide service.</p>
+          <p class="price">৳8500</p>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://source.unsplash.com/400x300/?mountain" alt="Bandarban" />
+        <div class="product-details">
+          <h2>Bandarban Adventure</h2>
+          <p>2 Days hiking experience with local guide and camping.</p>
+          <p class="price">৳6500</p>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://source.unsplash.com/400x300/?forest" alt="Sundarban" />
+        <div class="product-details">
+          <h2>Sundarban Wild Tour</h2>
+          <p>Explore the world’s largest mangrove forest with luxury cruise.</p>
+          <p class="price">৳10500</p>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <h3>Payment Methods</h3>
+    <div class="payment-methods">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Bkash_Logo.svg" alt="Bkash" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Nagad_Logo.png" alt="Nagad" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Visa_Logo.png" alt="Visa" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard" />
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Siam Travel Group | Designed by SIAM HASAN</p>
+  </footer>
+</body>
+</html>
