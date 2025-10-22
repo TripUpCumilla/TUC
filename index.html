@@ -746,10 +746,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- move top -->
 
+	<script>
+document.getElementById('searchInput').addEventListener('input', function() {
+  const input = this.value.toLowerCase();
+  const cards = document.querySelectorAll('.product-card');
+  let anyVisible = false;
+
+  cards.forEach(card => {
+    const title = card.querySelector('.card-title').textContent.toLowerCase();
+    const desc = card.querySelector('.card-text').textContent.toLowerCase();
+
+    if (title.includes(input) || desc.includes(input)) {
+      card.style.display = 'block';
+      anyVisible = true;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  // যদি কোনো প্রডাক্ট না মেলে
+  const existingMsg = document.getElementById('noResultMsg');
+  if (!anyVisible) {
+    if (!existingMsg) {
+      const msg = document.createElement('div');
+      msg.id = 'noResultMsg';
+      msg.className = 'text-center text-muted mt-3';
+      msg.textContent = 'No matching tours found!';
+      document.getElementById('productList').after(msg);
+    }
+  } else if (existingMsg) {
+    existingMsg.remove();
+  }
+});
+	</script>
 
 
 </body>
 </html>
+
 
 
 
