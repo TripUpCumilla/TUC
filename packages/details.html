@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Details - Siam Travel Group</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f4f7f8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #0088cc, #00c6ff);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      width: 90%;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    .payment {
+      margin-top: 30px;
+    }
+    .payment h3 {
+      color: #0088cc;
+    }
+    .payment-methods img {
+      width: 50px;
+      margin: 5px;
+    }
+    form {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    input, select, button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      background: #00c6ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #0088cc;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      margin-top: 30px;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #0088cc;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SIAM TRAVEL GROUP</h1>
+    <p>Tour Details & Payment</p>
+  </header>
+
+  <div class="container">
+    <h2>Cox’s Bazar Tour Details</h2>
+    <p>বাংলাদেশের দক্ষিণ উপকূলে অবস্থিত কক্সবাজার বিশ্বের দীর্ঘতম সমুদ্র সৈকত। আমাদের ৩ দিন ২ রাতের ট্যুর প্যাকেজে থাকছে — এয়ার কন্ডিশনড বাস যাত্রা, হোটেল থাকার ব্যবস্থা, সকাল–দুপুর–রাতের খাবার এবং ট্যুর গাইড সার্ভিস।</p>
+
+    <table>
+      <tr><th>বিষয়</th><th>বিবরণ</th></tr>
+      <tr><td>সময়কাল</td><td>৩ দিন ২ রাত</td></tr>
+      <tr><td>যাত্রা শুরু</td><td>ঢাকা থেকে</td></tr>
+      <tr><td>খরচ</td><td>৳৮৫০০</td></tr>
+      <tr><td>অন্তর্ভুক্ত সুবিধা</td><td>হোটেল, খাবার, গাইড, পরিবহন</td></tr>
+      <tr><td>যোগাযোগ</td><td>01300-XXXXXX</td></tr>
+    </table>
+
+    <div class="payment">
+      <h3>💳 পেমেন্ট করুন</h3>
+      <p>আপনি নিচের যেকোনো মাধ্যমে পেমেন্ট করতে পারেন:</p>
+      <ul>
+        <li><strong>bKash:</strong> 017XXXXXXXX</li>
+        <li><strong>Nagad:</strong> 018XXXXXXXX</li>
+        <li><strong>Rocket:</strong> 019XXXXXXXX</li>
+      </ul>
+      <div class="payment-methods">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Bkash_Logo.svg" alt="Bkash" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Nagad_Logo.png" alt="Nagad" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Visa_Logo.png" alt="Visa" />
+      </div>
+
+      <h3>📋 পেমেন্ট ফর্ম</h3>
+      <form onsubmit="event.preventDefault(); alert('✅ Payment information received!');">
+        <input type="text" placeholder="নাম লিখুন" required />
+        <input type="text" placeholder="মোবাইল নম্বর" required />
+        <input type="text" placeholder="Transaction ID" required />
+        <select required>
+          <option value="">ট্যুর প্যাকেজ নির্বাচন করুন</option>
+          <option>Cox’s Bazar Tour</option>
+          <option>Bandarban Adventure</option>
+          <option>Sundarban Wild Tour</option>
+        </select>
+        <button type="submit">Submit Payment</button>
+      </form>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Siam Travel Group | Designed by SIAM HASAN</p>
+  </footer>
+</body>
+</html>
