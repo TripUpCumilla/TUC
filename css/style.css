@@ -780,6 +780,46 @@ h5.bottom {
     min-height: 190px;
 	margin: 5px;
 }
+bg-image-bottom2 {
+    background: url(../images/s5.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 190px;
+	margin: 5px;
+}
+bg-image-bottom2 {
+    background: url(../images/s6.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 190px;
+	margin: 5px;
+}
+bg-image-bottom2 {
+    background: url(../images/s7.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 190px;
+	margin: 5px;
+}
+bg-image-bottom2 {
+    background: url(../images/s8.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 190px;
+	margin: 5px;
+}
 
 .bg-image-left h4 {
     padding-top: 350px;
@@ -1625,4 +1665,5 @@ h3.heading {
 }
 }
 /*-- //Responsive design --*/
+
 
