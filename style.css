@@ -1127,6 +1127,19 @@ h4.destination {
 }
 /*-- //team --*/ 
 
+.notice-section .card {
+  background: linear-gradient(to bottom right, #fff7e6, #fff);
+  transition: 0.3s;
+}
+.notice-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+.notice-section ul li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 /*-- contact --*/
 .adress-w3pvt-info h6 {
     font-size: 1.2em;
@@ -1626,4 +1639,5 @@ h3.heading {
 }
 }
 /*-- //Responsive design --*/
+
 
