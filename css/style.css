@@ -741,7 +741,7 @@ h5.bottom {
 	color: #da9d40;
 }
 .bg-image-left {
-    background: url(../images/s1.jpg) no-repeat center;
+    background: url(images/s1.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -751,7 +751,7 @@ h5.bottom {
 	margin: 5px;
 }
 .bg-image-right {
-    background: url(../images/s2.jpg) no-repeat center;
+    background: url(images/s2.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1665,5 +1665,6 @@ h3.heading {
 }
 }
 /*-- //Responsive design --*/
+
 
 
