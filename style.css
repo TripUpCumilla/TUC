@@ -1639,5 +1639,17 @@ h3.heading {
 }
 /*-- //Responsive design --*/
 
+footer:hover {
+  background: linear-gradient(to right, #42a5f5, #1976d2, #0d47a1);
+  transition: 0.5s;
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+
 
 
