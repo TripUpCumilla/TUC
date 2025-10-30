@@ -1649,26 +1649,70 @@ footer p {
   letter-spacing: 0.5px;
 }
 
-/* --- Testimonials Section Text Color --- */
-.testimonials {
-  background: linear-gradient(to right, #0d47a1, #1976d2); /* চাইলে ব্যাকগ্রাউন্ডও সুন্দর করতে পারো */
-  color: #fff; /* সব টেক্সট সাদা হবে */
+/* Services Section */
+.services {
+  background: linear-gradient(135deg, #1a237e, #0d47a1);
+  color: #fff;
 }
 
-.testimonials p {
-  color: #f8f9fa; /* রিভিউ টেক্সটের জন্য সাদা শেড */
-  font-size: 1rem;
-  line-height: 1.7;
+.service-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+}
+.service-icon span {
+  font-size: 40px;
+  color: #ffeb3b;
+}
+.service-card h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.service-card p {
+  font-size: 0.95rem;
+  color: #e3f2fd;
 }
 
-.testimonials h3 {
-  color: #fff; /* নামও সাদা থাকবে */
+/* Tour Boxes */
+.tour-box {
+  position: relative;
+  height: 230px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+.tour-box:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+.tour-box h4 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  padding: 10px;
   font-weight: 600;
+  font-size: 1.1rem;
 }
 
-.testimonials .fa {
-  color: #ffeb3b; /* quote আইকনগুলোর রঙ সোনালী */
-}
+/* Background Images */
+.bg-image-left { background-image: url('images/coxbazar.jpg'); }
+.bg-image-right { background-image: url('images/bandarban.jpg'); }
+.bg-image-bottom1 { background-image: url('images/sajek.jpg'); }
+.bg-image-bottom2 { background-image: url('images/sundarban.jpg'); }
+.bg-image-bottom3 { background-image: url('images/rangamati.jpg'); }
+.bg-image-bottom4 { background-image: url('images/shremangal.jpg'); }
+.bg-image-bottom5 { background-image: url('images/shitakundu.jpg'); }
+.bg-image-bottom6 { background-image: url('images/sylhet.jpg'); }
+
 
 
 
