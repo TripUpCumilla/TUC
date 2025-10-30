@@ -911,6 +911,29 @@ section#gallery {
 /*-- //gallery --*/
 /*-- /testimonials --*/
 
+/* Clients Review Section */
+.clients {
+  color: #333; /* ডিফল্ট টেক্সট কালার */
+}
+
+/* Review টেক্সটের জন্য */
+.clients p {
+  color: #555; /* হালকা ধূসর টেক্সট */
+  font-style: italic;
+}
+
+/* রিভিউকারীর নামের জন্য */
+.clients h6 {
+  color: #0d47a1; /* নীলাভ রঙ */
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* চাইলে হেডিংয়ের রঙও পরিবর্তন করতে পারো */
+.clients .heading {
+  color: #ff9800; /* কমলা রঙ */
+}
+
 .testimonials {
    background:#f4b200;
 }
@@ -1649,6 +1672,7 @@ footer p {
   font-size: 16px;
   letter-spacing: 0.5px;
 }
+
 
 
 
