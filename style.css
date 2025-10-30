@@ -1649,6 +1649,28 @@ footer p {
   letter-spacing: 0.5px;
 }
 
+/* --- Testimonials Section Text Color --- */
+.testimonials {
+  background: linear-gradient(to right, #0d47a1, #1976d2); /* চাইলে ব্যাকগ্রাউন্ডও সুন্দর করতে পারো */
+  color: #fff; /* সব টেক্সট সাদা হবে */
+}
+
+.testimonials p {
+  color: #f8f9fa; /* রিভিউ টেক্সটের জন্য সাদা শেড */
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.testimonials h3 {
+  color: #fff; /* নামও সাদা থাকবে */
+  font-weight: 600;
+}
+
+.testimonials .fa {
+  color: #ffeb3b; /* quote আইকনগুলোর রঙ সোনালী */
+}
+
+
 
 
 
