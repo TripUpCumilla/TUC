@@ -1706,6 +1706,65 @@ footer p {
 
 
 
+/* ====== TEAM HOVER EFFECT ====== */
+.team-grid {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.team-grid img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.team-grid:hover img {
+  transform: scale(1.1);
+  filter: brightness(60%) blur(1px);
+}
+
+/* Name + Phone info box */
+.team-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+}
+
+/* On hover, show info */
+.team-grid:hover .team-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth shadow effect */
+.team-grid:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Optional: Text styling */
+.team-info h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.team-info span {
+  display: block;
+  font-size: 14px;
+  color: #f1f1f1;
+}
 
 
 
