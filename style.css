@@ -1677,41 +1677,32 @@ footer p {
   color: #e3f2fd;
 }
 
-/* Tour Boxes */
-.tour-box {
+/* Team section simple hover color effect */
+.team-grid {
   position: relative;
-  height: 230px;
-  border-radius: 12px;
   overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.4s ease, filter 0.3s ease;
-}
-.tour-box:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-.tour-box h4 {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.45);
-  color: #fff;
-  padding: 10px;
-  font-weight: 600;
-  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
-/* Background Images */
-.bg-image-left { background-image: url('images/coxbazar.jpg'); }
-.bg-image-right { background-image: url('images/bandarban.jpg'); }
-.bg-image-bottom1 { background-image: url('images/sajek.jpg'); }
-.bg-image-bottom2 { background-image: url('images/sundarban.jpg'); }
-.bg-image-bottom3 { background-image: url('images/rangamati.jpg'); }
-.bg-image-bottom4 { background-image: url('images/shremangal.jpg'); }
-.bg-image-bottom5 { background-image: url('images/shitakundu.jpg'); }
-.bg-image-bottom6 { background-image: url('images/sylhet.jpg'); }
+.team-grid img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.team-info {
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 15px 10px;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Hover effect: only color change */
+.team-grid:hover .team-info {
+  background: linear-gradient(135deg, #00bcd4, #009688); /* নরম নীল-সবুজ গ্রেডিয়েন্ট */
+  color: #fff; /* টেক্সট সাদা থাকবে */
+}
 
 
 
