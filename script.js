@@ -1,9 +1,9 @@
-...
-  <button class="popup-btn" onclick="closePopup()">ঠিক আছে</button>
-</div>
-</div>
+// Show popup when site loads
+window.addEventListener('load', function() {
+  document.getElementById('popup').style.display = 'flex';
+});
 
-<!-- External JavaScript Link -->
-<script src="script.js"></script>
-</body>
-</html>
+// Close popup
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
