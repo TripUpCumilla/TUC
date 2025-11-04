@@ -777,7 +777,7 @@ h5.bottom {
     -moz-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
-    min-height: 190px;
+    min-height: 220px;
 	margin: 5px;
 }
 .bg-image-left2 {
@@ -787,7 +787,7 @@ h5.bottom {
     -moz-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
-    min-height: 450px;
+    min-height: 250px;
 	margin: 5px;
 }
 .bg-image-right2 {
@@ -1882,6 +1882,7 @@ body {
   color: #fff;
   box-shadow: 0 0 10px rgba(0, 168, 255, 0.7);
 }
+
 
 
 
