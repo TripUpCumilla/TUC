@@ -1998,6 +1998,64 @@ body {
 }
 
 
+/* Masonry Grid Fix (works with Bootstrap) */
+.masonry {
+  column-count: 3;
+  column-gap: 15px;
+}
+
+@media (max-width: 992px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+@media (max-width: 600px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+
+.tour-item {
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  display: inline-block;
+  width: 100%;
+  height: 250px;
+  position: relative;
+  transition: all 0.4s ease;
+  break-inside: avoid; /* ✅ Key for masonry layout */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tour-item.tall {
+  height: 350px;
+}
+.tour-item.wide {
+  height: 300px;
+}
+
+.tour-item:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.tour-item h4 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 10px;
+  font-family: 'Noto Sans Bengali', sans-serif;
+  letter-spacing: 1px;
+}
+
 
 
 
