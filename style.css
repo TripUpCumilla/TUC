@@ -729,7 +729,7 @@ h5.bottom {
     font-size: 24px;
 }
 .bottom-left {
-    background: url(../images/left.jpg) no-repeat center;
+    background: url(images/left.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -741,7 +741,7 @@ h5.bottom {
 	color: #da9d40;
 }
 .bg-image-left {
-    background: url(../images/s1.jpg) no-repeat center;
+    background: url(images/s1.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -751,7 +751,7 @@ h5.bottom {
 	margin: 5px;
 }
 .bg-image-right {
-    background: url(../images/s2.jpg) no-repeat center;
+    background: url(images/s2.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -761,7 +761,7 @@ h5.bottom {
 	margin: 5px;
 }
 .bg-image-bottom1 {
-    background: url(../images/s3.jpg) no-repeat center;
+    background: url(images/s3.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -771,7 +771,7 @@ h5.bottom {
 	margin: 5px;
 }
 .bg-image-bottom2 {
-    background: url(../images/s4.jpg) no-repeat center;
+    background: url(images/s4.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -781,7 +781,7 @@ h5.bottom {
 	margin: 5px;
 }
 .bg-image-left2 {
-    background: url(../images/s5.jpg) no-repeat center;
+    background: url(images/s5.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -791,7 +791,7 @@ h5.bottom {
 	margin: 5px;
 }
 .bg-image-right2 {
-    background: url(../images/s6.jpg) no-repeat center;
+    background: url(images/s6.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1882,6 +1882,7 @@ body {
   color: #fff;
   box-shadow: 0 0 10px rgba(0, 168, 255, 0.7);
 }
+
 
 
 
