@@ -1903,6 +1903,59 @@ body {
   box-shadow: 0 0 10px rgba(0, 168, 255, 0.7);
 }
 
+/* Tour Images (5–38) */
+[class^="bg-image-bottom"] {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 5px;
+  min-height: 220px;
+}
+[class^="bg-image-bottom"] h4 {
+  text-align: center;
+  color: #fff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding-top: 100px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Individual image backgrounds */
+.bg-image-bottom5 { background-image: url(images/s5.jpg); }
+.bg-image-bottom6 { background-image: url(images/s6.jpg); }
+.bg-image-bottom7 { background-image: url(images/s7.jpg); }
+.bg-image-bottom8 { background-image: url(images/s8.jpg); }
+.bg-image-bottom9 { background-image: url(images/s9.jpg); }
+.bg-image-bottom10 { background-image: url(images/s10.jpg); }
+.bg-image-bottom11 { background-image: url(images/s11.jpg); }
+.bg-image-bottom12 { background-image: url(images/s12.jpg); }
+.bg-image-bottom13 { background-image: url(images/s13.jpg); }
+.bg-image-bottom14 { background-image: url(images/s14.jpg); }
+.bg-image-bottom15 { background-image: url(images/s15.jpg); }
+.bg-image-bottom16 { background-image: url(images/s16.jpg); }
+.bg-image-bottom17 { background-image: url(images/s17.jpg); }
+.bg-image-bottom18 { background-image: url(images/s18.jpg); }
+.bg-image-bottom19 { background-image: url(images/s19.jpg); }
+.bg-image-bottom20 { background-image: url(images/s20.jpg); }
+.bg-image-bottom21 { background-image: url(images/s21.jpg); }
+.bg-image-bottom22 { background-image: url(images/s22.jpg); }
+.bg-image-bottom23 { background-image: url(images/s23.jpg); }
+.bg-image-bottom24 { background-image: url(images/s24.jpg); }
+.bg-image-bottom25 { background-image: url(images/s25.jpg); }
+.bg-image-bottom26 { background-image: url(images/s26.jpg); }
+.bg-image-bottom27 { background-image: url(images/s27.jpg); }
+.bg-image-bottom28 { background-image: url(images/s28.jpg); }
+.bg-image-bottom29 { background-image: url(images/s29.jpg); }
+.bg-image-bottom30 { background-image: url(images/s30.jpg); }
+.bg-image-bottom31 { background-image: url(images/s31.jpg); }
+.bg-image-bottom32 { background-image: url(images/s32.jpg); }
+.bg-image-bottom33 { background-image: url(images/s33.jpg); }
+.bg-image-bottom34 { background-image: url(images/s34.jpg); }
+.bg-image-bottom35 { background-image: url(images/s35.jpg); }
+.bg-image-bottom36 { background-image: url(images/s36.jpg); }
+.bg-image-bottom37 { background-image: url(images/s37.jpg); }
+.bg-image-bottom38 { background-image: url(images/s38.jpg); }
 
 
 
