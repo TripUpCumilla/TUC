@@ -694,7 +694,7 @@ h4.title-hny {
 }
 
 .stats {
-    background: url(../images/stats1.jpg) no-repeat 0px 0px;
+    background: url(images/stats1.jpg) no-repeat 0px 0px;
     background-size: cover;
     position: relative;
 }
@@ -1882,6 +1882,7 @@ body {
   color: #fff;
   box-shadow: 0 0 10px rgba(0, 168, 255, 0.7);
 }
+
 
 
 
