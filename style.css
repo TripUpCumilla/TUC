@@ -649,6 +649,221 @@ h4.title-hny {
     text-transform: capitalize;
     letter-spacing: 2px;
 }
+
+/*-- //services --*/
+/* === Travel Gallery Section === */
+.gallery {
+  background: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%);
+  padding: 80px 0;
+.banner-about {
+    padding: 3em 4em;
+    background: #f6f6f6;
+}
+.gallery h2 {
+  font-size: 36px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+.banner-about h4 {
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+/* Masonry Layout */
+.masonry-gallery {
+  column-count: 3;
+  column-gap: 15px;
+h5.bottom {
+    margin: .5em 0;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 24px;
+}
+.gallery-item {
+  position: relative;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 15px;
+  display: inline-block;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+.bottom-left {
+    background: url(images/left.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+}
+.gallery-item img {
+  width: 100%;
+  border-radius: 15px;
+  display: block;
+  transition: all 0.3s ease-in-out;
+.banner-about span.fa{
+	font-size: 40px;
+	color: #da9d40;
+}
+/* Different height styles for random look */
+.gallery-item.tall img {
+  height: 380px;
+  object-fit: cover;
+.bg-image-left {
+    background: url(images/s1.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 450px;
+	margin: 5px;
+}
+.gallery-item.wide img {
+  height: 250px;
+  object-fit: cover;
+.bg-image-right {
+    background: url(images/s2.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 250px;
+	margin: 5px;
+}
+.gallery-item img:not(.tall):not(.wide) {
+  height: 300px;
+  object-fit: cover;
+.bg-image-bottom1 {
+    background: url(images/s3.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 190px;
+	margin: 5px;
+}
+/* Hover Effect */
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(80%);
+.bg-image-bottom2 {
+    background: url(images/s4.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 220px;
+	margin: 5px;
+}
+/* Responsive Design */
+@media (max-width: 992px) {
+  .masonry-gallery {
+    column-count: 2;
+  }
+.bg-image-left2 {
+    background: url(images/s5.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 250px;
+	margin: 5px;
+}
+@media (max-width: 576px) {
+  .masonry-gallery {
+    column-count: 1;
+  }
+.bg-image-right2 {
+    background: url(images/s6.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 250px;
+	margin: 5px;
+}
+
+.bg-image-left h4 {
+    padding-top: 350px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 190px;
+}
+.bg-image-right h4 {
+    padding-top: 170px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 250px;
+}
+.bg-image-bottom1 h4,.bg-image-bottom2 h4 {
+    padding-top:120px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 22px;
+    background: rgba(0, 0, 0, 0.4);
+min-height: 190px;
+}
+.bg-image-left2 h4 {
+    padding-top: 120px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 190px;
+}
+.bg-image-right2 h4 {
+    padding-top: 170px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 250px;
+}
+.bg-image-bottom1 h4,.bg-image-bottom3 h4 {
+    padding-top:120px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 22px;
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 190px;
+}
+.bg-image-bottom1 h4,.bg-image-bottom3 h4 {
+    padding-top:120px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 22px;
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 190px;
+}
+.bg-image-left2 h4 {
+    padding-top: 120px;
+    min-height: 190px;
+}
+/*-- //about bottom --*/
 /*-- //services --*/
 .banner-about {
     padding: 3em 4em;
@@ -2025,6 +2240,7 @@ body {
   color: #fff;
   box-shadow: 0 0 10px rgba(0, 168, 255, 0.7);
 }
+
 
 
 
