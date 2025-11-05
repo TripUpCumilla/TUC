@@ -832,14 +832,14 @@ h5.bottom {
     min-height: 190px;
 }
 .bg-image-left2 h4 {
-    padding-top: 350px;
+    padding-top: 120px;
     text-align: center;
     color: #fff;
     letter-spacing: 5px;
     text-transform: uppercase;
     font-size: 24px;
     background: rgba(0, 0, 0, 0.4);
-    min-height: 250px;
+    min-height: 190px;
 }
 .bg-image-right2 h4 {
     padding-top: 170px;
@@ -869,6 +869,10 @@ h5.bottom {
     text-transform: uppercase;
     font-size: 22px;
     background: rgba(0, 0, 0, 0.4);
+    min-height: 190px;
+}
+.bg-image-left2 h4 {
+    padding-top: 120px;
     min-height: 190px;
 }
 /*-- //about bottom --*/
@@ -1902,6 +1906,7 @@ body {
   color: #fff;
   box-shadow: 0 0 10px rgba(0, 168, 255, 0.7);
 }
+
 
 
 
