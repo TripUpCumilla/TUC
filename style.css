@@ -650,7 +650,77 @@ h4.title-hny {
     letter-spacing: 2px;
 }
 /*-- //services --*/
+/* === Travel Gallery Section === */
+.gallery {
+  background: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%);
+  padding: 80px 0;
+}
+
+.gallery h2 {
+  font-size: 36px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+/* Masonry Layout */
+.masonry-gallery {
+  column-count: 3;
+  column-gap: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 15px;
+  display: inline-block;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 15px;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Different height styles for random look */
+.gallery-item.tall img {
+  height: 380px;
+  object-fit: cover;
+}
+.gallery-item.wide img {
+  height: 250px;
+  object-fit: cover;
+}
+.gallery-item img:not(.tall):not(.wide) {
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Hover Effect */
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(80%);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .masonry-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .masonry-gallery {
+    column-count: 1;
+  }
+}
+
 /*-- //services --*/
+
 /*-- stats --*/
 .stats h3.heading {
     color: #f8f9fa;
@@ -1743,6 +1813,7 @@ body {
   color: #fff;
   box-shadow: 0 0 10px rgba(0, 168, 255, 0.7);
 }
+
 
 
 
