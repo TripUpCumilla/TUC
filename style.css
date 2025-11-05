@@ -695,7 +695,7 @@ h4.title-hny {
 }
 
 .stats {
-    background: url(../images/stats1.jpg) no-repeat 0px 0px;
+    background: url(images/stats1.jpg) no-repeat 0px 0px;
     background-size: cover;
     position: relative;
 }
@@ -730,7 +730,7 @@ h5.bottom {
     font-size: 24px;
 }
 .bottom-left {
-    background: url(../images/left.jpg) no-repeat center;
+    background: url(images/left.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -742,7 +742,7 @@ h5.bottom {
 	color: #da9d40;
 }
 .bg-image-left {
-    background: url(../images/s1.jpg) no-repeat center;
+    background: url(images/s1.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -752,7 +752,7 @@ h5.bottom {
 	margin: 5px;
 }
 .bg-image-right {
-    background: url(../images/s2.jpg) no-repeat center;
+    background: url(images/s2.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -762,7 +762,7 @@ h5.bottom {
 	margin: 5px;
 }
 .bg-image-bottom1 {
-    background: url(../images/s3.jpg) no-repeat center;
+    background: url(images/s3.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -772,7 +772,7 @@ h5.bottom {
 	margin: 5px;
 }
 .bg-image-bottom2 {
-    background: url(../images/s4.jpg) no-repeat center;
+    background: url(images/s4.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1626,3 +1626,4 @@ h3.heading {
 }
 }
 /*-- //Responsive design --*/
+
