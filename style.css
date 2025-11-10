@@ -1796,4 +1796,104 @@ body {
 
 
 
+/* Popup Background */
+.auth-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+
+/* Popup Box */
+.auth-box {
+  background: #fff;
+  width: 350px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  position: relative;
+  animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Close Button */
+.auth-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: red;
+  border: none;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Tabs */
+.auth-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  background: #eee;
+  border: none;
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.tab-btn.active {
+  background: #ff9800;
+  color: #fff;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form input {
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+.auth-btn {
+  padding: 12px;
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.auth-btn:hover {
+  background: #e68900;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+
 
