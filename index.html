@@ -59,6 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li class=""><a href="#stats">Stats</a></li>
 				<li class=""><a href="#testimonials">Review & Announcement</a></li>
 				<li class=""><a href="#contact">Contact us</a></li>
+				<li><a href="#" onclick="openAuth()">Sign In</a></li>
 			</ul>
 		</nav>
 		<!-- //nav -->
@@ -996,6 +997,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
   </div>
 
+	<!-- Authentication Popup -->
+<div id="authPopup" class="auth-overlay">
+  <div class="auth-box">
+
+    <!-- Close Button -->
+    <button class="auth-close" onclick="closeAuth()">X</button>
+
+    <!-- Tabs -->
+    <div class="auth-tabs">
+      <button class="tab-btn active" onclick="openTab('login')">Sign In</button>
+      <button class="tab-btn" onclick="openTab('signup')">Sign Up</button>
+      <button class="tab-btn" onclick="openTab('forgot')">Forgot Password</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="login" class="auth-form">
+      <h2>Sign In</h2>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button class="auth-btn">Login</button>
+    </form>
+
+    <!-- Signup Form -->
+    <form id="signup" class="auth-form hidden">
+      <h2>Create Account</h2>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <button class="auth-btn">Register</button>
+    </form>
+
+    <!-- Forgot Password Form -->
+    <form id="forgot" class="auth-form hidden">
+      <h2>Reset Password</h2>
+      <input type="email" placeholder="Enter your email" required>
+      <button class="auth-btn">Send Reset Link</button>
+    </form>
+  </div>
+</div>
+
   <!-- External JS -->
   <script src="script.js"></script>
 </body>
@@ -1036,6 +1078,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </html>
 
 		  
+
 
 
 
