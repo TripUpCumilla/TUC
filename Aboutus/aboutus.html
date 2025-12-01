@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>আমাদের সম্পর্কে — Trip Up Cumilla</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Siyam+Rupali&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after{box-sizing:border-box}
+    html,body{height:100%;}
+    body{margin:0; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+
+    :root{
+      --max-width:1200px;
+      --page-padding:20px;
+      --card-padding:clamp(18px, 3.2vw, 36px);
+      --box-bg: rgba(255,255,255,0.06);
+      --accent: rgba(255,255,255,0.95);
+      --muted: rgba(255,255,255,0.75);
+      --glass-border: rgba(255,255,255,0.06);
+      --gap:18px;
+    }
+
+    body{
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Siyam Rupali', sans-serif;
+      color:var(--accent);
+      background: linear-gradient(120deg,#0f172a 0%, #3b0a5f 25%, #1e3a8a 50%, #0ea5a5 75%);
+      background-size: 300% 300%;
+      animation: bgShift 16s ease-in-out infinite;
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:calc(var(--page-padding) + 10px) var(--page-padding) 40px;
+    }
+    @keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+    .wrap{width:100%;max-width:var(--max-width);}
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border-radius:18px;
+      padding:var(--card-padding);
+      box-shadow:0 10px 30px rgba(4,6,20,0.55), inset 0 1px 0 rgba(255,255,255,0.02);
+      backdrop-filter: blur(8px) saturate(120%);
+      border: 1px solid var(--glass-border);
+      width:100%;
+    }
+
+    header.hero{display:flex;gap:16px;align-items:flex-start}
+    .title{
+      font-family: 'Siyam Rupali', 'Inter', sans-serif;
+      font-size:clamp(20px, 2.8vw, 34px);
+      line-height:1.05;margin:0;color:#fff;letter-spacing:0.2px
+    }
+    .subtitle{color:var(--muted);margin-top:8px;font-size:clamp(12px,1.2vw,15px)}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:var(--gap);
+      align-items:start;
+      margin-top:18px;
+    }
+
+    .content h3{margin-top:14px;margin-bottom:8px;font-size:clamp(16px,1.6vw,20px);color:#f8fafc}
+    p{margin:8px 0 12px 0;color:rgba(255,255,255,0.92);line-height:1.75}
+    ul.who-list{list-style:none;padding:0;margin:12px 0 18px 0;display:grid;gap:10px}
+    .who-list li{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
+
+    .side{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.04)}
+    .contact{display:flex;flex-direction:column;gap:8px}
+    .phone{font-weight:700;color:#fff}
+    .cta{display:inline-block;padding:10px 14px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);text-decoration:none;color:#fff;margin-top:6px}
+
+    footer.note{margin-top:18px;color:rgba(255,255,255,0.7);font-size:13px}
+    .phone a{color:inherit;text-decoration:none}
+
+    @media (min-width:1200px){
+      .grid{grid-template-columns: 1fr 360px}
+      .card{padding:44px}
+      .side{position:sticky;top:calc(20px + 10vh)}
+    }
+
+    @media (max-width:880px){
+      body{padding-top:28px}
+      .card{padding:20px}
+      .grid{grid-template-columns:1fr;}
+      header.hero{flex-direction:column;gap:8px}
+      .subtitle{margin-top:4px}
+      .title{font-size:22px}
+      .who-list li{padding:10px}
+    }
+
+    @media (max-width:420px){
+      :root{--page-padding:12px}
+      body{padding:12px}
+      .card{padding:14px}
+      .title{font-size:20px}
+      p{font-size:14px}
+      .who-list li{font-size:14px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="main">
+      <header class="hero">
+        <div style="flex:1;min-width:0">
+          <h1 class="title">আমাদের সম্পর্কে
+            <span style="display:block;font-size:14px;color:rgba(255,255,255,0.85);font-weight:600;margin-top:8px">About Us — Trip Up Cumilla</span>
+          </h1>
+          <p class="subtitle">কুমিল্লা কেন্দ্রিক বিশ্বাসযোগ্য ট্রাভেল কমিউনিটি ও এজেন্সি — স্মরণীয় প্রত্যেকটি যাত্রা নিশ্চিত করার লক্ষ্য।</p>
+        </div>
+      </header>
+
+      <div class="grid">
+        <section class="content">
+
+          <h3>সংক্ষেপে আমরা</h3>
+          <p>
+            <strong>Trip Up Cumilla</strong> হলো কুমিল্লা থেকে পরিচালিত একটি নির্ভরযোগ্য ট্র্যাভেল ও ট্যুর কমিউনিটি/এজেন্সি। আমরা ভ্রমণকে সহজ, নিরাপদ
+            ও স্মরণীয় করে তুলি — চাই সেই ভ্রমণটি হোক বন্ধুদের সঙ্গে হিল‑ট্রিপ, পরিবারিক সমুদ্র ভ্রমণ, কিংবা কচাকাটা‑ট্যুর।
+          </p>
+
+          <h3>আমাদের সেবা</h3>
+          <ul class="who-list">
+            <li>কাস্টমাইজড গ্রুপ ট্রিপ, ফ্যামিলি ট্যুর, কাপল ট্রিপ ও প্রাইভেট প্যাকেজ</li>
+            <li>সাজেক, বান্দরবান, কক্সবাজার, সেন্টমার্টিন, সিলেটসহ দেশের মূল পর্যটন-গন্তব্য</li>
+            <li>বাস/ভ্যান/কোচ রিজার্ভেশন, আরামদায়ক হোটেল/রিসোর্ট বুকিং</li>
+            <li>খাবার, গাইড, ও ট্রিপ‑ম্যানেজমেন্ট সহ পূর্ণ সেবা</li>
+            <li>স্কুল/কলেজ স্টাডি ট্যুর এবং কর্পোরেট/অফিস কাউন্টড ভ্রমণ</li>
+          </ul>
+
+          <h3>কেন আমাদের সাথে ভ্রমণ করবেন?</h3>
+          <p>
+            আমরা কুমিল্লা‑ভিত্তিক হওয়ায় স্থানীয় লজিস্টিক্স ও রুট‑নলেজে দক্ষ। খোলা খরচনীতি, নির্ভরযোগ্য পরিবহন ও মানসম্মত আবাস নিশ্চিত করে
+            প্রতিটি যাত্রাকে আরামে পরিণত করি। আমাদের অভিজ্ঞ টিম এবং সক্রিয় কমিউনিটি আপনার ট্রিপকে মসৃণ করে দেয়।
+          </p>
+
+          <h3>আমাদের অঙ্গীকার</h3>
+          <p>
+            “আমরা ভ্রমণ আয়োজন করি — কিন্তু স্মৃতি তৈরি করেন আপনি।” আমরা নিরাপত্তা, সময়নিষ্ঠতা ও পরিষেবার মান বজায় রেখে প্রতিটি ভ্রমণকে স্মরণীয় করে তুলি।
+          </p>
+
+          <footer class="note">এই পেজে দেওয়া তথ্যগুলি Trip Up Cumilla–এর পাবলিক সোর্স এবং আমাদের অফিসিয়াল কমিউনিকেশন থেকে সংগৃহীত। নির্দিষ্ট প্যাকেজ ও তারিখ‑দর নির্দিষ্ট পোস্টে আলাদা হতে পারে; বুকিং করার আগে সর্বশেষ বিবরণ যাচাই করুন।</footer>
+        </section>
+
+        <aside class="side" aria-labelledby="contact-heading">
+          <h3 id="contact-heading">যোগাযোগ</h3>
+          <div class="contact">
+            <div><span style="display:block;color:rgba(255,255,255,0.8)">আমাদের সাথে যোগাযোগ করুন</span></div>
+            <div class="phone"><a href="tel:+8801632112292">আমেনা: 01632-112292</a></div>
+            <div class="phone"><a href="tel:+8801333209626">লিমন: 01333-209626</a></div>
+            <div class="phone"><a href="tel:+8801887988955">পপি / ফাহিমা: 01887-988955</a></div>
+            <a class="cta" href="https://www.facebook.com/tripupcumilla" target="_blank" rel="noopener">Facebook পেইজ দেখুন</a>
+          </div>
+
+          <h3 style="margin-top:16px">ছোট করে</h3>
+          <p style="margin:6px 0 0 0; color:rgba(255,255,255,0.85)">কুমিল্লা‑ভিত্তিক ভ্রমণ প্যাকেজ এবং গ্রুপ‑ট্রিপ আয়োজনকারী একটি বিশ্বস্ত প্ল্যাটফর্ম।</p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
