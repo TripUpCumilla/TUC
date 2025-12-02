@@ -215,5 +215,143 @@
   <footer>
     <p>&copy; 2025 Trip Up Cumilla | Designed by Shuvro Ahmad</p>
   </footer>
+
+<!-- ===================== Trip Up Cumilla — Attention Popup (Paste before </body>) ===================== -->
+<style>
+  /* Scoped styles (class/id নাম ইউনিক রাখলাম যাতে আপনার বিদ্যমান স্টাইল নষ্ট না করে) */
+  #tuc-attn-overlay{
+    position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+    z-index:99999; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    background: rgba(6,6,12,0.35); /* subtle dim */
+  }
+  /* animated purple/blue gradient backdrop */
+  #tuc-attn-bg{
+    position:absolute; inset:0; z-index:99990;
+    background: linear-gradient(120deg, #5b2cff 0%, #7a4bff 33%, #4fb3ff 66%, #9b6bff 100%);
+    background-size: 300% 300%;
+    animation: tuc-grad 9s ease infinite;
+    opacity:0.95;
+    filter: saturate(1.05) contrast(1.02);
+  }
+  @keyframes tuc-grad {
+    0%{ background-position: 0% 50%; }
+    50%{ background-position: 100% 50%; }
+    100%{ background-position: 0% 50%; }
+  }
+
+  /* modal card */
+  #tuc-attn-card{
+    position:relative; z-index:99999;
+    width:min(720px,94%); max-width:720px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff; padding:22px; border-radius:14px;
+    box-shadow: 0 18px 50px rgba(10,10,20,0.55);
+    display:grid; grid-template-columns: 1fr auto; gap:14px; align-items:start;
+    backdrop-filter: blur(6px);
+    animation: tuc-pop .24s cubic-bezier(.2,.9,.2,1) both;
+  }
+  @keyframes tuc-pop {
+    from{ transform: translateY(10px) scale(.98); opacity:0; } to{ transform:none; opacity:1; }
+  }
+
+  #tuc-attn-card h2{ margin:0 0 6px 0; font-size:1.4rem; letter-spacing:-0.2px; }
+  #tuc-attn-card p{ margin:0; font-size:1rem; opacity:0.95; }
+
+  .tuc-attn-close{
+    background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12);
+    color:#fff; padding:10px 12px; border-radius:10px; cursor:pointer; font-weight:600;
+  }
+  .tuc-attn-close:hover{ transform: translateY(-2px); }
+
+  .tuc-attn-actions{ margin-top:12px; display:flex; gap:10px; }
+  .tuc-attn-btn{
+    padding:10px 14px; border-radius:10px; cursor:pointer; border:1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.08); color:#fff; font-weight:600;
+  }
+
+  /* responsive */
+  @media (max-width:480px){
+    #tuc-attn-card{ grid-template-columns:1fr; padding:16px; border-radius:12px; }
+    .tuc-attn-close{ justify-self:end; }
+  }
+</style>
+
+<div id="tuc-attn-overlay" role="dialog" aria-modal="true" aria-labelledby="tuc-attn-title" aria-describedby="tuc-attn-desc" hidden>
+  <div id="tuc-attn-bg" aria-hidden="true"></div>
+
+  <div id="tuc-attn-card" role="document" aria-live="polite">
+    <div>
+      <h2 id="tuc-attn-title">Trip Up Cumilla — Attention</h2>
+      <p id="tuc-attn-desc">সাময়িক সময়ের জন্য সুন্দরবন ট্রিপ বন্ধ রয়েছে। অনুগ্রহ করে কেউ বুকিং করবেন না। বিস্তারিত তথ্য জানতে ফর্মে দেয়া নাম্বারে যোগাযোগ করার জন্য অনুরোধ করা হইলো</p>
+
+      <div class="tuc-attn-actions">
+        <button class="tuc-attn-btn" id="tuc-attn-learn">বিস্তারিত দেখুন</button>
+        <button class="tuc-attn-btn" id="tuc-attn-dismiss">পরে দেখবো</button>
+      </div>
+
+      <p style="margin-top:10px; opacity:0.9; font-size:0.92rem;">আপনি চাইলে বন্ধ করে পেজ চালিয়ে যেতে পারবেন — বন্ধ করার পর পপআপ আর দেখাবে না যতক্ষণ না পেজ রিফ্রেশ করা হয়।</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;">
+      <button class="tuc-attn-close" id="tuc-attn-close" aria-label="বন্ধ করুন">বন্ধ</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const overlay = document.getElementById('tuc-attn-overlay');
+    const closeBtn = document.getElementById('tuc-attn-close');
+    const dismissBtn = document.getElementById('tuc-attn-dismiss');
+    const learnBtn = document.getElementById('tuc-attn-learn');
+
+    // show on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      // safety: don't show if user has explicitly navigated from some modal action (optional)
+      overlay.hidden = false;
+      document.body.style.overflow = 'hidden'; // prevent background scroll while open
+      // focus trap start
+      closeBtn.focus();
+    });
+
+    function hideModal(){
+      overlay.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', hideModal);
+    dismissBtn.addEventListener('click', hideModal);
+
+    // "বিস্তারিত দেখুন" — পেইজে নির্দিষ্ট সেকশনে স্ক্রল বা লিংকে নিয়ে যেতে পারেন
+    learnBtn.addEventListener('click', () => {
+      hideModal();
+      // উদাহরণ: যদি আপনার পেইজে '#payment' বা '#important' সেকশন থাকে uncomment করুন:
+      // document.querySelector('#payment')?.scrollIntoView({behavior:'smooth'});
+    });
+
+    // ক্লিক আউটসাইড বন্ধ করা
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) hideModal();
+    });
+
+    // ESC কী চাপলে বন্ধ করা
+    document.addEventListener('keydown', (e) => {
+      if ((e.key === 'Escape' || e.key === 'Esc') && !overlay.hidden) {
+        hideModal();
+      }
+    });
+
+    // খুব বেসিক ফোকাস-ট্র্যাপ (মোডাল খোলা থাকলে বাইরের এলিমেন্টে ফোকাস গেলে ফিরিয়ে আনা হবে)
+    document.addEventListener('focus', function(e){
+      if (!overlay.hidden && !overlay.contains(e.target)) {
+        e.stopPropagation();
+        closeBtn.focus();
+      }
+    }, true);
+  })();
+</script>
+<!-- ===================== End Attention Popup ===================== -->
+  
 </body>
 </html>
