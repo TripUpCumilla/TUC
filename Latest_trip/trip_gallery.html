@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>আমাদের ট্রিপ গ্যালারি</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(-45deg, #001f3f, #004080, #0074D9, #39CCCC);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color: #ffffff;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 20px 40px;
+}
+
+.trip-card {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    padding: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: transform .3s, box-shadow .3s;
+}
+
+.trip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.trip-card img {
+    width: 100%;
+    height: 220px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.trip-info {
+    margin-top: 15px;
+}
+
+.trip-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.trip-desc {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    opacity: .7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">🌍 আমাদের নতুন ট্রিপ গ্যালারি</div>
+
+<div class="gallery">
+
+    <div class="trip-card">
+        <img src="YOUR_IMAGE_URL_HERE" alt="Trip Photo">
+        <div class="trip-info">
+            <div class="trip-title">কক্সবাজার সি-বিচ ট্রিপ</div>
+            <div class="trip-desc">
+                বাংলাদেশের সবচেয়ে বড় সমুদ্রসৈকতে আমাদের দুর্দান্ত একটি ট্রিপ।  
+                সূর্যাস্ত, বিচ ভিউ, সি-ফুড—সব মিলিয়ে অসাধারণ অভিজ্ঞতা।
+            </div>
+        </div>
+    </div>
+
+    <div class="trip-card">
+        <img src="YOUR_IMAGE_URL_HERE" alt="Trip Photo">
+        <div class="trip-info">
+            <div class="trip-title">সাজেক ভ্যালি ট্যুর</div>
+            <div class="trip-desc">
+                মেঘের রাজ্য সাজেকে রোমাঞ্চকর ট্রিপ।  
+                শীতল বাতাস, মেঘের আসা-যাওয়া আর পাহাড়ের সৌন্দর্য।
+            </div>
+        </div>
+    </div>
+
+    <div class="trip-card">
+        <img src="YOUR_IMAGE_URL_HERE" alt="Trip Photo">
+        <div class="trip-info">
+            <div class="trip-title">সেন্ট মার্টিন আইল্যান্ড</div>
+            <div class="trip-desc">
+                নীল জল, কোরাল, সমুদ্রের ঢেউ—সব মিলিয়ে এই দ্বীপ সত্যিই স্বপ্নময়।
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    © 2025 Trip Gallery | All rights reserved
+</div>
+
+</body>
+</html>
