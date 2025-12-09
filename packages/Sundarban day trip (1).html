@@ -95,6 +95,206 @@
   </style>
 </head>
 <body>
+	<!-- START: Trip status floating popup (paste right after <body>) -->
+<style>
+  /* Floating badge container */
+  .trip-status-badge {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 14px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    box-shadow: 0 8px 30px rgba(15, 29, 66, 0.25);
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    cursor: default;
+    min-width: 260px;
+    max-width: 88%;
+  }
+
+  /* animated bluish multi-color gradient (4-5 tones, নীলাভ বর্ণের প্রাধান্য) */
+  .trip-status-badge::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 999px;
+    background: linear-gradient(90deg,
+      #0b6fb8 0%,
+      #0e8acb 20%,
+      #2aa0e8 45%,
+      #6fc6ff 70%,
+      #bfe7ff 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s linear infinite;
+    opacity: 0.98;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 50%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .trip-status-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    line-height: 1;
+    text-align: left;
+  }
+
+  .trip-status-title {
+    font-size: 0.95rem;
+  }
+  .trip-status-sub {
+    font-size: 0.78rem;
+    opacity: 0.95;
+    font-weight: 500;
+  }
+
+  .trip-badge-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+  }
+
+  /* states */
+  .running .trip-badge-indicator {
+    background: radial-gradient(circle at 30% 30%, #fff9, #eaff) , linear-gradient(180deg,#adfffb,#00d4ff);
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.7);
+  }
+  .not-running .trip-badge-indicator {
+    background: linear-gradient(180deg,#cfd8e3,#8896b3);
+    box-shadow: 0 0 8px rgba(80,90,110,0.45);
+  }
+
+  .trip-status-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .trip-dismiss-btn {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+  .trip-dismiss-btn:active { transform: translateY(1px); }
+  .trip-dismiss-btn[aria-pressed="true"] { display: none; }
+
+  /* small responsiveness */
+  @media (max-width: 420px) {
+    .trip-status-badge { padding: 8px 12px; top: 10px; min-width: 200px; }
+    .trip-status-title { font-size: 0.88rem; }
+    .trip-status-sub { font-size: 0.72rem; }
+  }
+</style>
+
+<div id="tripStatusBadge" class="trip-status-badge not-running" role="status" aria-live="polite" aria-atomic="true" style="display:none;">
+  <div class="trip-badge-indicator" aria-hidden="true"></div>
+
+  <div class="trip-status-text">
+    <div id="tripStatusTitle" class="trip-status-title">ট্রিপ স্ট্যাটাস</div>
+    <div id="tripStatusSub" class="trip-status-sub">লোডিং...</div>
+  </div>
+
+  <div class="trip-status-actions">
+    <button id="tripDismissBtn" class="trip-dismiss-btn" aria-label="Close trip status">✕</button>
+  </div>
+</div>
+
+<script>
+  (function(){
+    // === CONFIG: update these dates/times (ISO 8601) as needed ===
+    // Example: departure 2025-10-23 22:00 local, return 2025-10-25 06:00 local
+    const startDate = new Date("2025-10-23T22:00:00"); // <-- সেট করুন আপনার যাত্রা শুরু সময়
+    const endDate   = new Date("2025-10-25T08:00:00"); // <-- সেট করুন আপনার ফিরতি সময় (সমাপ্তি)
+    // If you prefer to force show regardless of dates, set forceShow = true;
+    const forceShow = false;
+    // Optional custom messages
+    const runningMessage = "চলছে — বুকিং গ্রহণ করা যাচ্ছে।";
+    const notRunningMessage = "এই মুহূর্তে ট্রিপ চলছে না।";
+
+    const badge = document.getElementById("tripStatusBadge");
+    const titleEl = document.getElementById("tripStatusTitle");
+    const subEl = document.getElementById("tripStatusSub");
+    const dismissBtn = document.getElementById("tripDismissBtn");
+
+    function formatDateShort(dt){
+      try {
+        return dt.toLocaleString(undefined, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+      } catch (e) {
+        return dt.toString();
+      }
+    }
+
+    function updateStatus(){
+      const now = new Date();
+      let isRunning = (now >= startDate && now <= endDate) || forceShow;
+      badge.style.display = "flex";
+      if(isRunning){
+        badge.classList.remove("not-running");
+        badge.classList.add("running");
+        titleEl.textContent = "ট্রিপ চলছে";
+        subEl.textContent = runningMessage + " ( " + formatDateShort(startDate) + " → " + formatDateShort(endDate) + " )";
+      } else {
+        badge.classList.remove("running");
+        badge.classList.add("not-running");
+        titleEl.textContent = "ট্রিপ বন্ধ আছে";
+        subEl.textContent = notRunningMessage + " পরবর্তী: " + formatDateShort(startDate);
+      }
+    }
+
+    // show badge after small delay so page renders first
+    window.addEventListener("load", function(){
+      try { updateStatus(); } catch (e) { console.error(e); }
+      // auto-hide after 12s if not running (optional). remove if you don't want auto-hide.
+      if (!((new Date()) >= startDate && (new Date()) <= endDate)) {
+        setTimeout(() => {
+          // don't hide if user already dismissed
+          if (badge && badge.style.display !== 'none') badge.style.opacity = '0'; 
+          setTimeout(()=>{ if(badge) badge.style.display = 'none'; }, 400);
+        }, 12000);
+      }
+    });
+
+    // dismiss control (persist dismiss in sessionStorage so it won't pop again this session)
+    dismissBtn.addEventListener("click", function(){
+      badge.style.display = "none";
+      try { sessionStorage.setItem("tripStatusDismissed", "1"); } catch(e){}
+    });
+
+    // check if user already dismissed during session
+    try {
+      if (sessionStorage.getItem("tripStatusDismissed")) {
+        badge.style.display = "none";
+      } else {
+        // if DOM already loaded, update now
+        if (document.readyState === "complete") updateStatus();
+      }
+    } catch(e){}
+  })();
+</script>
+<!-- END: Trip status floating popup -->
   <header>
     <h1>Trip Up Cumilla</h1>
     <p>Tour Details & Payment</p>
@@ -220,21 +420,6 @@
 	<link rel="stylesheet" href="css/style.css">
 		  <link rel="stylesheet" href="bootstrap.css">
 <link rel="stylesheet" href="style.css"> <!-- এটা সর্বশেষে থাকবে -->
-
-  <!-- Popup Section -->
-  <div class="popup-overlay" id="popup">
-    <div class="popup-box">
-      <h2>📢 Attention 📢</h2>
-		<p>সাময়িক সময়ের জন্য আমাদের সুন্দরবন ট্রিপ বন্ধ রয়েছে। পরবর্তীতে চালু হলে জানিয়ে দেয়া হবে। যেকোনো তথ্য জানতে আমাদের পেজে দেয়া নাম্বারে যোগাযোগ করুন।</p>
-
-
-<p>অন্যান্য ট্যুরের বিস্তারিত জেনে বুকিং করতে যোগাযোগ করুন এই নাম্বারে- 01887988955
-অথবা পেইজে মেসেজ দিন- Trip Up Cumilla
-		</p>
-      
-      <button class="popup-btn" onclick="closePopup()">ঠিক আছে</button>
-    </div>
-  </div>
   
 </body>
 </html>
