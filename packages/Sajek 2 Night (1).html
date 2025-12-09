@@ -95,6 +95,123 @@
   </style>
 </head>
 <body>
+
+<!-- START: Premium Trip Status Popup -->
+<style>
+  .trip-popup {
+    position: fixed;
+    top: -140px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 520px;
+    padding: 22px 26px;
+    border-radius: 20px;
+    color: #e9f4ff;
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 10000;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    animation: slideIn 1s ease forwards;
+    cursor: default;
+  }
+
+  /* Dark bluish animated gradient */
+  .trip-popup::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    z-index: -1;
+    background: linear-gradient(130deg,
+      #001020 0%,
+      #002954 25%,
+      #00457a 50%,
+      #0065a8 75%,
+      #0090d8 100%);
+    background-size: 320% 320%;
+    animation: gradientMove 6.5s infinite alternate linear;
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+  @keyframes slideIn {
+    0% { top: -200px; opacity: 0; }
+    60% { top: 24px; opacity: 1; }
+    100% { top: 18px; opacity: 1; }
+  }
+
+  .popup-light {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 14px rgba(0,255,255,0.9);
+    background: radial-gradient(circle, #d9ffff 30%, #00e5ff 95%);
+  }
+
+  .popup-text { flex: 1; }
+  .popup-text h3 {
+    margin: 0;
+    font-size: 1.32rem;
+    font-weight: 700;
+  }
+  .popup-text p {
+    margin: 4px 0 0;
+    font-size: 0.95rem;
+    opacity: 0.92;
+    line-height: 1.35em;
+  }
+
+  .popup-close {
+    font-size: 20px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: 0.25s;
+  }
+  .popup-close:hover { opacity: 1; transform: scale(1.1); }
+
+  @media(max-width:450px){
+    .trip-popup { padding: 18px 20px; gap: 12px; }
+    .popup-text h3 { font-size: 1.18rem; }
+    .popup-text p { font-size: 0.87rem; }
+  }
+</style>
+
+<div id="tripPopup" class="trip-popup">
+  <div class="popup-light"></div>
+  <div class="popup-text">
+    <h3>📌 বুকিং চলছে</h3>
+    <p>এই ট্রিপের জন্য বর্তমানে সিট বুকিং গ্রহণ করা হচ্ছে ✔️</p>
+  </div>
+  <button class="popup-close" id="popupClose">✕</button>
+</div>
+
+<script>
+  const popup = document.getElementById("tripPopup");
+  const closeBtn = document.getElementById("popupClose");
+
+  // show after load
+  window.addEventListener("load", () => {
+    popup.style.display = "flex";
+  });
+
+  // close action
+  closeBtn.addEventListener("click", () => {
+    popup.style.opacity = "0";
+    popup.style.top = "-200px";
+    setTimeout(() => popup.style.display = "none", 400);
+  });
+</script>
+<!-- END: Premium Trip Status Popup -->
   <header>
     <h1>Trip Up Cumilla</h1>
     <p>Tour Details & Payment</p>
