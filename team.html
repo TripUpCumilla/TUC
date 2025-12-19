@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team Members</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Segoe UI', 'Noto Sans Bengali', sans-serif;
+    background: linear-gradient(120deg, #ffe0e6, #d3a6b0, #b39eb5, #ffe0e6);
+    background-size: 400% 400%;
+    animation: bgMove 18s ease infinite;
+    color: #111;
+  }
+  @keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  header {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #ff4d6d, #8b0000, #b22222, #3a0000);
+    background-size: 300% 300%;
+    animation: headerMove 12s ease infinite;
+  }
+  @keyframes headerMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  header h1 {
+    font-size: clamp(26px,5vw,46px);
+    font-weight: 800;
+    color: #fff;
+  }
+  .container {
+    max-width: 1200px;
+    margin:auto;
+    padding:60px 20px;
+  }
+  .gallery {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 28px;
+  }
+  .team-card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+    text-align:center;
+  }
+  .team-card img {
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    display:block;
+  }
+  .team-info {
+    padding: 14px 10px 18px;
+  }
+  .team-info h3 {
+    font-size: 20px;
+    margin-bottom:6px;
+    color:#8b0000;
+  }
+  .team-info span {
+    display:block;
+    margin-bottom:4px;
+    color:#111;
+    font-size:16px;
+  }
+  .team-info a {
+    color:#111;
+    text-decoration:none;
+    font-weight:600;
+  }
+  .team-info a:hover {
+    text-decoration:underline;
+  }
+  footer {
+    margin-top:60px;
+    padding:40px 20px;
+    text-align:center;
+    background: linear-gradient(135deg, #ff4d6d, #8b0000, #b22222, #3a0000);
+    background-size: 300% 300%;
+    animation: headerMove 12s ease infinite;
+    color:#fff;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Our Team Members</h1>
+</header>
+
+<section class="container">
+  <div class="gallery">
+
+    <div class="team-card">
+      <img src="images/t1.jpg" alt="AMENA AKTER KHEYA">
+      <div class="team-info">
+        <h3>AMENA AKTER KHEYA</h3>
+        <span>Founder And CEO</span>
+        <span><a href="tel:+8801632112292">+8801632112292</a></span>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="images/t2.jpg" alt="Senior host">
+      <div class="team-info">
+        <h3>Senior host</h3>
+        <span>Senior host</span>
+        <span><a href="tel:+8801887988955">+8801887988955</a></span>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="images/t3.jpg" alt="Sharian Imtiaz Limon">
+      <div class="team-info">
+        <h3>Sharian Imtiaz Limon</h3>
+        <span>Senior Host</span>
+        <span><a href="tel:+8801333209626">+8801333209626</a></span>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="images/t4.jpg" alt="SHUVRO AHMAD SIAM">
+      <div class="team-info">
+        <h3>SHUVRO AHMAD SIAM</h3>
+        <span>Host and Guide</span>
+        <span><a href="tel:+8801990060538">+8801990060538</a></span>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="images/t6.jpg" alt="Tawhid Islam">
+      <div class="team-info">
+        <h3>Tawhid Islam</h3>
+        <span>Host</span>
+        <span><a href="tel:+8801725723234">+8801725723234</a></span>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="images/t7.jpg" alt="Ridhita Nidhi">
+      <div class="team-info">
+        <h3>Ridhita Nidhi</h3>
+        <span>Host</span>
+        <span>N/A</span>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="images/t5.jpg" alt="Tamanna Akter">
+      <div class="team-info">
+        <h3>Tamanna Akter</h3>
+        <span>Senior Host</span>
+        <span><a href="tel:+8801627681633">+8801627681633</a></span>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="images/t8.jpg" alt="RS Rayhan Chowdhury">
+      <div class="team-info">
+        <h3>RS Rayhan Chowdhury</h3>
+        <span>Host and Guide</span>
+        <span><a href="tel:+8801621065292">+8801621065292</a></span>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="images/t10.jpg" alt="Omar Sany">
+      <div class="team-info">
+        <h3>Omar Sany</h3>
+        <span>Senior Host</span>
+        <span>N/A</span>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="images/t11.jpg" alt="Nahid Hawladar">
+      <div class="team-info">
+        <h3>Nahid Hawladar</h3>
+        <span>Host and Guide</span>
+        <span><a href="tel:+8801720962044">+8801720962044</a></span>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="images/t9.jpg" alt="Kamrun Nahar NIR">
+      <div class="team-info">
+        <h3>Kamrun Nahar NIR</h3>
+        <span>Host</span>
+        <span><a href="tel:+01748440838">01748440838</a></span>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="images/t12.jpg" alt="Mahmuda Afrin Mim">
+      <div class="team-info">
+        <h3>Mahmuda Afrin Mim</h3>
+        <span>Host</span>
+        <span>N/A</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 | Trip Up Cumilla — Meet Our Team</p>
+</footer>
+
+</body>
+</html>
