@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Latest Tour</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', 'Noto Sans Bengali', sans-serif;
+      color: #fff;
+      background: linear-gradient(120deg, #2b0a1f, #5a0f2e, #1a1a1a, #7a1c3d);
+      background-size: 400% 400%;
+      animation: bgMove 18s ease infinite;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #8b0000, #1a1a1a, #b22222, #3a0000);
+      background-size: 300% 300%;
+      animation: headerMove 12s ease infinite;
+    }
+
+    @keyframes headerMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header h1 {
+      font-size: clamp(26px, 5vw, 46px);
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+
+    .tour-card {
+      position: relative;
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .tour-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .tour-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      background: #222;
+    }
+
+    .tour-card h3 {
+      padding: 12px 10px 16px;
+      text-align: center;
+      font-size: 18px;
+      color: #ffd1dc;
+    }
+
+    .overlay {
+      position: absolute;
+      left: 0;
+      bottom: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: bottom 0.4s ease;
+    }
+
+    .tour-card:hover .overlay {
+      bottom: 0;
+    }
+
+    .details-btn {
+      padding: 12px 30px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ff4d6d, #8b0000);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .details-btn:hover { transform: scale(1.08); }
+
+    footer {
+      margin-top: 80px;
+      padding: 40px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #8b0000, #1a1a1a, #b22222, #3a0000);
+      background-size: 300% 300%;
+      animation: headerMove 12s ease infinite;
+      color: #fff;
+    }
+
+    footer p { font-size: 14px; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Our Latest Tour</h1>
+</header>
+
+<section class="container">
+  <div class="gallery">
+
+    <!-- ===== TOUR CARD TEMPLATE (Copy this block to add more tours) ===== -->
+    <div class="tour-card">
+      <img src="images/tour1.jpg" alt="Tour Place">
+      <h3>Tour Place Name</h3>
+      <div class="overlay">
+        <a href="DETAILS_PAGE_URL" class="details-btn">Details</a>
+      </div>
+    </div>
+    <!-- ===== END TEMPLATE ===== -->
+
+    <!-- Duplicate the template above to make total 15 cards -->
+
+    <div class="tour-card"><img src="images/tour2.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour3.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour4.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour5.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour6.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour7.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour8.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour9.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour10.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour11.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour12.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour13.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour14.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+    <div class="tour-card"><img src="images/tour15.jpg"><h3>Tour Place Name</h3><div class="overlay"><a href="DETAILS_PAGE_URL" class="details-btn">Details</a></div></div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 | Trip Up Cumilla — Our Latest Tour Moments</p>
+</footer>
+
+</body>
+</html>
