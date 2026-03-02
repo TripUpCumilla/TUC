@@ -1068,11 +1068,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  <link rel="stylesheet" href="bootstrap.css">
 <link rel="stylesheet" href="style.css"> <!-- এটা সর্বশেষে থাকবে -->
 
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault();
 
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var message = document.getElementById("message").value;
+
+    var whatsappNumber = "8801990060538"; 
+
+    var url = "https://wa.me/" + whatsappNumber + "?text="
+        + encodeURIComponent(
+            "New Message from Website:\n\n"
+            + "Name: " + name + "\n"
+            + "Email: " + email + "\n"
+            + "Phone: " + phone + "\n"
+            + "Message: " + message
+        );
+
+    window.open(url, "_blank");
+}
+</script>
+		  
 </body>
 </html>
 
 		  
+
 
 
 
