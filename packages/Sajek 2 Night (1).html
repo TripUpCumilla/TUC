@@ -186,32 +186,69 @@
   }
 </style>
 
-<div id="tripPopup" class="trip-popup">
-  <div class="popup-light"></div>
-  <div class="popup-text">
-    <h3>📌 বুকিং চলছে</h3>
-    <p>এই ট্রিপের জন্য বর্তমানে সিট বুকিং গ্রহণ করা হচ্ছে ✔️</p>
-  </div>
-  <button class="popup-close" id="popupClose">✕</button>
+<!-- TUC Popup Start -->
+<style>
+#tuc-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 15px;
+}
+
+#tuc-popup-box {
+    background: linear-gradient(135deg, #ff4d6d, #ff758f);
+    color: #fff;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 18px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    animation: tucPopupFade 0.4s ease;
+}
+
+#tuc-popup-box h2 {
+    font-size: clamp(16px, 4vw, 20px);
+    margin: 0;
+    font-weight: 600;
+}
+
+#tuc-popup-box button {
+    margin-top: 18px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 30px;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#tuc-popup-box button:hover {
+    transform: scale(1.05);
+    background: #222;
+}
+
+@keyframes tucPopupFade {
+    from {opacity: 0; transform: scale(0.8);}
+    to {opacity: 1; transform: scale(1);}
+}
+</style>
+
+<div id="tuc-popup-overlay">
+    <div id="tuc-popup-box">
+        <h2>Hey dear, Book now!</h2>
+        <button onclick="document.getElementById('tuc-popup-overlay').style.display='none'">
+            OK
+        </button>
+    </div>
 </div>
-
-<script>
-  const popup = document.getElementById("tripPopup");
-  const closeBtn = document.getElementById("popupClose");
-
-  // show after load
-  window.addEventListener("load", () => {
-    popup.style.display = "flex";
-  });
-
-  // close action
-  closeBtn.addEventListener("click", () => {
-    popup.style.opacity = "0";
-    popup.style.top = "-200px";
-    setTimeout(() => popup.style.display = "none", 400);
-  });
-</script>
-<!-- END: Premium Trip Status Popup -->
+<!-- TUC Popup End -->
   <header>
     <h1>Trip Up Cumilla</h1>
     <p>Tour Details & Payment</p>
