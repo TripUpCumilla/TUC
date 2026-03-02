@@ -38,3 +38,29 @@ function openTab(tabId) {
   // Add active to clicked button
   event.target.classList.add("active");
 }
+
+
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var message = document.getElementById("message").value;
+
+    var whatsappNumber = "8801990060538"; 
+    
+
+    var url = "https://wa.me/" + whatsappNumber + "?text="
+        + encodeURIComponent(
+            "New Message from Website:\n\n"
+            + "Name: " + name + "\n"
+            + "Email: " + email + "\n"
+            + "Phone: " + phone + "\n"
+            + "Message: " + message
+        );
+
+    window.open(url, "_blank");
+}
+</script>
